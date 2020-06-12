@@ -1,0 +1,3 @@
+Ecco come funziona quest'app:
+
+dentro SRC c'è il file app.js che gestisce tutta la logica dell'app
