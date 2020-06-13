@@ -2,3 +2,15 @@ body {
   margin: 0 auto;
   padding: 0 16px;
 }
+
+.view {
+  width: 60%; 
+  margin: 50px 20px"
+}
+
+@media screen and (max-width: 600px) {
+  .view {
+    width: auto;
+    margin: 2%;
+  }
+}
