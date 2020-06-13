@@ -1,9 +1,13 @@
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
-const app = express();
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
+
+const app = express();
+// Questo è per la porta di heroku. ENV è un oggetto che ci permette di recuperare le "i valori delle varianti del rispettivo ambiente"
+// || 3000 è un valore che aggiungiamo in caso non siamo connessi e vogliamo usare l'app in locale
+const port = process.env.PORT || 3000;
 
 // path.join() è una funzione che ha lo scopo di unire più pezzi di path in un unico path
 const publicDirectoryPath = path.join(__dirname, "../public");
@@ -111,6 +115,6 @@ app.get("*", (req, res) => {
 });
 
 // Questo metodo inizializza un server, si usa solo una volta per progetto. Ascolta(listen) su una determinata porta (che mettiamo come suo parametro)
-app.listen(3000, () => {
-  console.log("Server is up on port 3000.");
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
