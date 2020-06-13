@@ -20,7 +20,9 @@ const forecast = (latitude, longitude, callback) => {
         undefined,
         `It's currently ${body.current.weather_descriptions[0].toLowerCase()} with ${body.current.temperature} degrees in ${
           body.location.name
-        }, even if it feels like ${body.current.feelslike}.`
+        } (feels like ${body.current.feelslike} degrees). There is ${body.current.humidity}% of humidity and a wind speed of ${
+          body.current.wind_speed
+        }km/h. UV index: ${body.current.uv_index}.`
       );
       //   console.log(`It's currently ${weatherDescription} with ${temperature} degrees in ${cityName}, even if it feels like ${feelsLike}.`);
     }
